@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ImageFetchErrorDialog extends StatelessWidget {
+  const ImageFetchErrorDialog({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(

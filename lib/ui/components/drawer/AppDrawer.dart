@@ -17,7 +17,7 @@ class AppDrawer extends ConsumerWidget {
         label: "Remote",
         icon: Icons.connect_without_contact,
         onPress: () {
-          print("pressed");
+          debugPrint("pressed");
           galleryVM.addTestingImage();
         },
       ),

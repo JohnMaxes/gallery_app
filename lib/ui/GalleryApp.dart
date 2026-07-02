@@ -74,7 +74,7 @@ class GalleryAppContent extends ConsumerWidget {
               context: context,
               builder: ImageURLInputDialog().builder,
             );
-            if (networkImgURL != null) {
+            if (networkImgURL != null && context.mounted) {
               galleryVM.addNetworkImageByUrl(networkImgURL).onError((_, _) {
                 GalleryModalUtil.showAppDialog(
                   context: context,

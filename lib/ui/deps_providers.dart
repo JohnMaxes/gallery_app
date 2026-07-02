@@ -44,5 +44,9 @@ void configureGlobalDependencies() {
 }
 
 // Riverpod providers
+final galleryUseCasesProvider = Provider<GalleryUseCases>((ref) => getIt());
+final imageRecoveryServiceProvider = Provider<ImageRecoveryService>(
+  (ref) => getIt(),
+);
 final galleryViewModelProvider =
     NotifierProvider<GalleryViewModel, GalleryState>(GalleryViewModel.new);
