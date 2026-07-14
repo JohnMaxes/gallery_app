@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:test_app/app/app_router.dart';
+import 'package:test_app/app/AppRouter.dart';
 import 'package:test_app/core/components/popup/AddImageDialog.dart';
 import 'package:test_app/core/components/popup/ImageFetchErrorDialog.dart';
 import 'package:test_app/core/components/popup/ImageURLInputDialog.dart';
@@ -12,13 +12,13 @@ import 'package:test_app/core/components/topbar/AppTopbar.dart';
 import 'package:test_app/features/home/views/GridScreen.dart';
 import 'package:go_router/go_router.dart';
 
-class GalleryApp extends StatelessWidget {
+class GalleryApp extends ConsumerWidget {
   const GalleryApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
-      routerConfig: appRouter,
+      routerConfig: ref.read(appRouterProvider),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
       ),
