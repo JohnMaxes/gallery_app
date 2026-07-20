@@ -12,6 +12,9 @@ class AuthProvider extends _$AuthProvider {
   }
 
   AuthListenable listenable = AuthListenable();
+  void login() => setAuthState(.user);
+  void logout() => setAuthState(.unauthenticated);
+
   void setAuthState(AuthState newState) {
     state = newState;
     listenable.refresh();

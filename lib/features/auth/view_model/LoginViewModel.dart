@@ -16,7 +16,7 @@ class LoginViewModel extends _$LoginViewModel {
     if (state.username == '1' && state.password == '1') {
       debugPrint('${state.username} ${state.password}');
       final authProvider = ref.read(authProviderProvider.notifier);
-      authProvider.setAuthState(.loggedOn);
+      authProvider.setAuthState(.user);
     }
   }
 

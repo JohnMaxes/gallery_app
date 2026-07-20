@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
+import "package:test_app/core/providers/AuthProvider.dart";
 import "package:test_app/features/home/view_models/GalleryViewModel.dart";
 import "package:test_app/core/components/drawer/AppDrawerHeader.dart";
 import "package:test_app/core/components/drawer/AppDrawerItem.dart";
@@ -10,16 +11,19 @@ class AppDrawer extends ConsumerWidget {
   @override
   build(BuildContext context, WidgetRef ref) {
     final galleryVM = ref.read(galleryViewModelProvider.notifier);
+    final authProvider = ref.read(authProviderProvider.notifier);
     final List<({String label, IconData icon, VoidCallback onPress})>
     drawerOptions = [
       (label: "Local", icon: Icons.home, onPress: () {}),
       (
         label: "Remote",
         icon: Icons.connect_without_contact,
-        onPress: () {
-          debugPrint("pressed");
-          galleryVM.addTestingImage();
-        },
+        onPress: () => galleryVM.addTestingImage(),
+      ),
+      (
+        label: "Log out",
+        icon: Icons.logout,
+        onPress: () => authProvider.logout(),
       ),
     ];
 

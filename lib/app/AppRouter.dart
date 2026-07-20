@@ -18,7 +18,7 @@ GoRouter appRouter(Ref ref) {
     refreshListenable: authNotifier.listenable,
     redirect: (context, state) {
       final authState = ref.read(authProviderProvider);
-      final isLoggedIn = authState == .loggedOn;
+      final isLoggedIn = authState == .user;
       final isOnLoginPage = state.matchedLocation == '/login';
       if (!isLoggedIn && !isOnLoginPage) {
         return state.namedLocation('login');

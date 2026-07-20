@@ -41,6 +41,8 @@ void configureGlobalDependencies() {
     () => ImageRecoveryService(useCases: getIt()),
     dependsOn: [GalleryUseCases],
   );
+
+  // getIt.registerLazy
 }
 
 // Riverpod providers

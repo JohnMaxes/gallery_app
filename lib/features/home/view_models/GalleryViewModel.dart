@@ -44,9 +44,7 @@ class GalleryViewModel extends _$GalleryViewModel {
   void recoverImage(UIGalleryImage image) =>
       _imageRecoveryService.recover(image);
 
-  void addTestingImage() {
-    _useCases.getImageByUrl(url: mockURL);
-  }
+  void addTestingImage() => _useCases.getImageByUrl(url: mockURL);
 }
 
 const mockURL =
